@@ -1,8 +1,8 @@
 %define _conf_filename           vm-swappiness
 Name:           os-tweaks-sysctl-vm-swappiness
 Version:        1.0
-Release:        1%{?dist}
-Summary:        set vm.swappiness = 1 in sysctl
+Release:        2%{?dist}
+Summary:        reduce system swappiness in sysctl
 
 Group:          System Environment/Base
 License:        WTFPL
@@ -18,7 +18,7 @@ BuildArch:      noarch
 Requires:       procps
 
 %description
-set vm.swappiness = 1 in sysctl
+reduces system swappiness in sysctl (sets vm.swappiness = 1)
 
 %prep
 %setup -q  -c -T
@@ -51,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu May  7 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-2
+- provide better package description
+
 * Sun May  3 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-1
 - Initial Package
 

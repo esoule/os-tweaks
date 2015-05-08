@@ -1,8 +1,8 @@
 %define _conf_filename           ipv4-forward
 Name:           os-tweaks-sysctl-ipv4-forward
 Version:        1.0
-Release:        1%{?dist}
-Summary:        set net.ipv4.ip_forward = 1 in sysctl
+Release:        2%{?dist}
+Summary:        enable IPv4 forwarding in sysctl
 
 Group:          System Environment/Base
 License:        WTFPL
@@ -18,7 +18,14 @@ BuildArch:      noarch
 Requires:       procps
 
 %description
-set net.ipv4.ip_forward = 1 in sysctl
+enables IPv4 forwarding in sysctl.
+
+Please note that IPv4 forwarding must also be enabled
+in firewall configuration.
+
+See also: package firstinst-firewall-config will configure
+the firewall for IPv4 forwarding, on first boot of the
+installed system.
 
 %prep
 %setup -q  -c -T
@@ -51,6 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu May  7 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-2
+- provide better package description
+
 * Sun May  3 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-1
 - Initial Package
 

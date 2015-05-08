@@ -1,7 +1,7 @@
 %define _conf_filename         developers
 Name:           os-tweaks-sudo-developers
 Version:        1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        permit users in group developers to run certain commands as root
 
 Group:          System Environment/Base
@@ -18,8 +18,10 @@ BuildArch:      noarch
 Requires:       sudo
 
 %description
-permit users in group developers to run certain commands as root
-
+permits users in group developers to run certain commands
+(package management, service management, networking,
+storage management, process management, driver management)
+as root.
 
 %prep
 %setup -q  -c -T
@@ -52,6 +54,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu May  7 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-2
+- provide better package description
+
 * Sun May  3 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-1
 - Initial Package
 

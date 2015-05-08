@@ -1,7 +1,7 @@
 
 Name:           os-tweaks-grep-color
 Version:        1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        enable color for grep, provide grep-with-less functions
 
 Group:          System Environment/Base
@@ -19,7 +19,8 @@ BuildArch:      noarch
 Requires:       /etc/profile.d
 
 %description
-enable color for grep, provide grep-with-less functions
+enables color for grep, provide grep-with-less functions, for
+all users
 
 %prep
 %setup -q  -c -T
@@ -55,6 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu May  7 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-2
+- provide better package description
+
 * Sun May  3 2015 Evgueni Souleimanov <esoule@100500.ca> - 1.0-1
 - Initial Package
 
